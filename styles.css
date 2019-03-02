@@ -16,7 +16,6 @@
   height: 88mm;
   border: 7px solid black;
   border-radius: 7px;
-  background: #ddd;
   text-align: center;
   display: inline-table;
   position: relative;
@@ -47,31 +46,72 @@
   height: 140px;
   margin: 7px 0 0px 0; }
 
-.stats {
+.bottom-row {
+  height: 25px;
   text-align: center;
   position: absolute;
   bottom: 5px;
   left: 0;
-  right: 0; }
-  .stats h4 {
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: 0px 5px 0px 5px;
+  border-radius: 5px;
+  color: #fff; }
+  .bottom-row h4 {
     font-size: 11pt; }
-  .stats div {
+  .bottom-row div {
     display: inline-block; }
 
-.combat {
+.bottom-left {
   position: absolute;
   left: 0;
-  bottom: 0; }
+  top: 0; }
+  .bottom-left img {
+    max-height: 20px;
+    max-width: 100%;
+    margin: 0px 0px -4px 0px; }
+  .bottom-left h4 {
+    margin: 0px 5px 0px 0px;
+    padding: 5px 5px 5px 0px; }
 
-.treasure {
+.dmg-icon {
+  margin-left: 5px;
+  padding-left: 5px; }
+
+.dmg-text {
+  margin: 0; }
+
+.bottom-center {
   text-align: center;
   left: 0;
-  right: 0;
-  bottom: 0; }
+  right: 0; }
 
-.mana {
+.bottom-right {
   position: absolute;
   right: 0;
-  bottom: 0; }
+  top: 0; }
+
+.upper-right {
+  margin: 2px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #307; }
+  .upper-right img {
+    height: 30px;
+    max-width: 100%; }
+
+.summon-cost {
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -18,42 +18,60 @@
                      <div>
                          <textarea style="width:600px;height:200px;" id="input">
 [
+  {
+   "title": "Eerie Snowmen",
+   "image": "https://drive.google.com/thumbnail?id=1kxdTxmDn_R8beSEfnhyH9hRMbOqwzlYg",
+   "rarity": "Uncommon",
+   "type": "Creature",
+   "subtype": "Elemental",
+   "element": "Frost",
+   "text": "If anyone has discarded a card this turn, it deals 2 more damage this turn.",
+   "defeat": "You cannot speak or play Spells until the end of your next turn.",
+   "power": "5+",
+   "treasure": "2",
+   "mana": "3",
+   "summon-cost": "5"
+ },
  {
    "title": "Grim Grimoire",
-   "image": "https://drive.google.com/thumbnail?id=1MEMeoePpvb0LqLQxsGyInke34OlMEH08",
+   "image": "https://drive.google.com/thumbnail?id=1Ad4xeFuUztQmGS0VHfnACrbbB2uS9_4D",
+   "rarity": "Rare",
    "type": "Artifact",
    "subtype": "Spellbook",
-   "text": "Once on your turn, you may cast a Spell from the discard pile by discarding Creatures from your hand with a total Mana value equal or greater to the Mana value of the Spell being cast. Shuffle the Spell into the deck after.",
+   "text": "Once on your turn, you may discard Creature cards from your hand with Mana value equal to or greater than the Mana value of a Spell in the discard pile to cast it. Shuffle the spell into the deck afterwards.",
    "mana": "3"
  },
-  {
-   "title": "Bittermouth, Avatar of Absorbtion",
-   "image": "https://drive.google.com/thumbnail?id=1skvcVVj_5AboxTvTJY39sY8ny_Knm1wQ",
+ {
+   "title": "Bittermouth<br>Avatar of Absorbtion",
+   "image": "https://drive.google.com/thumbnail?id=119meQ6oemLibzuf4wqqFzXEIFk1rXVTO",
+   "rarity": "Rare",
    "type": "Avatar",
    "text": "Bittermouth's power increases by 1 for each Creature card in the discard pile, to a max bonus of 6.",
-   "power": "9+"
+   "power": "9+",
+   "summon-cost": "4"
  },
-  {
-   "title": "Snowflake Obsidian Ring",
-   "image": "https://drive.google.com/thumbnail?id=19yMCnIfvXhfdu8EyP9w4jtXGebuMrbzj",
+ {
+ "title": "Snowflake<br>Obsidian Ring",
+   "image": "https://drive.google.com/thumbnail?id=1A9ZUkr3eUEnpIFO6BLEDQiSrBSBAskQ4",
+   "rarity": "Uncommon",
    "type": "Artifact",
-   "element": "Earth/Frost",
-   "subtype": "Ring",
-   "text": "Once during a fight, you may discard a card from your hand to increase to your damage by 2 for the fight. You may also change the type of damage you deal this fight to Earth or Frost.",
+   "element": "Storm Frost",
+   "text": "Once during a fight, you may discard a card from your hand to increase to your damage by 2 for the fight. You may also change the type of damage you deal this fight to Storm or Frost.",
    "mana": "2"
  },
  {
    "title": "Ekmar",
-   "type": "Character",
-   "subtype" : "Warlock",
-   "element" : "Fire",
+   "image": "https://drive.google.com/thumbnail?id=1Ao4uoJJvJjsCPPMOTLpqVnNN9PedAcd4",
+   "rarity": "",
+   "type": "Character - Warlock - Fire",
    "text": "In a fight, deal 1 Fire damage."
  },
  {
    "title": "Orb of Destruction",
-   "image": "https://drive.google.com/thumbnail?id=17TLNi4xqSpaqPpaiXNLO6GAkCOm_B1lC",
-   "type": "Legendary Orb",
-   "text": "Once during you turn, you may discard a card to destroy an artifact with equal or lesser Mana value than the discarded card."
+   "image": "https://drive.google.com/thumbnail?id=1_YQE4KwzdS9oQhHRSUQjMwx893KGabiK",
+   "rarity": "Rare",
+   "type": "Orb",
+   "text": "Once during you turn, you may discard a card from your hand to place an Artifact with equal or lesser Mana value than the discarded card into the discard pile."
  }
 
 ]
@@ -69,6 +87,12 @@
                 <div class="cardbody" {{#if
                 rarity}}style="border-color:{{border}};"{{/if}}>
                     <h3>{{{title}}}</h3>
+                    {{#if summon-cost}}
+                    <div class="upper-right">
+                    <img src="https://drive.google.com/thumbnail?id=1_KuTCrw-hCnvGc3jQmOckxPx4qKytLj5"/>
+                    <div
+                    class="summon-cost">{{summon-cost}}</div></div>
+                    {{/if}}
                     {{#if image}}
                     <img src="{{image}}"/>
                     {{/if}}
@@ -80,19 +104,20 @@
                     {{#if defeat}}
                     <p><b>Defeat: </b>{{defeat}}</p>
                     {{/if}}
-                    <div class="stats">
+                    <div class="bottom-row">
                         {{#if power}}
-                        <div class="combat">
-                            <h4><i class="fas fa-hand-rock"></i> {{power}}</h4>
+                        <div class="bottom-left">
+                            <div class="dmg-icon"><img src="{{dmgType}}"/></div>
+                            <div class="dmg-text"><h4>{{power}}</h4></div>
                         </div>
                         {{/if}}
                         {{#if treasure}}
-                        <div class="treasure">
+                        <div class="bottom-center">
                             <h4><i class="far fa-gem"></i> {{treasure}}</h4>
                         </div>
                         {{/if}}
                         {{#if mana}}
-                        <div class="mana">
+                        <div class="bottom-right">
                             <h4><i class="fas fa-magic"></i> {{mana}}</h4>
                         </div>
                         {{/if}}

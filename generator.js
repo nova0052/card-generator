@@ -1,19 +1,35 @@
 const template = document.getElementById("card-body").innerHTML;
 const compiled = Handlebars.compile(template);
 
-const demo = {
-        "title" : "Forest Wildflower",
-        "image" : "./carnivorous-plant.png",
-        "type" : "Creature",
-        "text" : "Vulnerable to Frost"
-};
-
-
 function generate(input){
     let cardlist = JSON.parse(input.value);
     let cards = [];
     
     cardlist.forEach(card => {
+        if(card.hasOwnProperty("power")){
+            switch(card.element){
+                case "Earth":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1Ip8QXdFC5_bOPkLH7UwfJNNNaxYyoKRv";
+                    break;
+                case "Fire":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1qRXE1ONqJuW-ycDRTJbjMkWY6zcCo_D9";
+                    break;
+                case "Storm":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1sfpJkxypdIXPznrhF_WqiyN9izWiLZXu";
+                    break;
+                case "Frost":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1oYqTss4rrsac0JwC3cg5uNx_4NLbf_FU";
+                    break;
+                case "Light":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1-NqL9vo-uS71tqw9ezLLD7urxTY10mIn";
+                    break;
+                case "Shadow":
+                    card.dmgType = "https://drive.google.com/thumbnail?id=1wvTyAdn9LS9r4Bo52HiLqKUwbOwdckxM";
+                    break;
+                default:
+                    card.dmgType = "https://drive.google.com/thumbnail?id=17KJ-dWeGEchhuB3MBuKy5i6AjgNyytos";
+            };
+        }
         if(card.hasOwnProperty("rarity")){
             switch(card.rarity){
                 case "Common":
