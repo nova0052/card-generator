@@ -106,9 +106,9 @@
     max-width: 100%; }
 
 .summon-cost {
+  width: 20px;
   position: absolute;
   top: 0px;
-  right: 6px;
   color: #FFF;
   font-size: 20px;
   font-weight: bold;
