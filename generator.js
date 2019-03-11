@@ -33,18 +33,59 @@ function generate(input){
         if(card.hasOwnProperty("rarity")){
             switch(card.rarity){
                 case "Common":
-                    card.border = "black";
+                    card.titleColor = "black";
                     break;
                 case "Uncommon":
-                    card.border = "darkgrey";
+                    card.titleColor = "darkgrey";
                     break;
                 case "Rare":
+                    card.titleColor = "goldenrod";
+                    break;
+                default:
+                    card.titleColor = "black";
+            };
+        }
+        if(card.hasOwnProperty("type")){
+            switch(card.type){
+                case "spell":
+                case "Spell":
+                    card.border = "lightblue";
+                    break;
+                case "artifact":
+                case "Artifact":
+                    card.border = "darkgrey";
+                    break;
+                case "creature":
+                case "Creature":
+                    card.border = "black";
+                    break;
+                case "avatar":
+                case "Avatar":
                     card.border = "goldenrod";
+                    break;
+                case "character":
+                case "Character":
+                    switch(card.subtype){
+                        case "Wizard" :
+                        case  "wizard":
+                            card.border = "navy";
+                            break;
+                        case "Warlock" :
+                        case  "warlock":
+                            card.border = "darkred";
+                            break;
+                        case "Lizard" :
+                        case  "lizard":
+                            card.border = "darkgreen";
+                            break;
+                        default:
+                            card.border = "black";
+                    };
                     break;
                 default:
                     card.border = "black";
             };
-        }
+        };
         if(card.hasOwnProperty("count")){
             for(let y = 0; y < card.count; y++){
                 cards.push(card);

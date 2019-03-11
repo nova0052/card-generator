@@ -84,9 +84,8 @@
              </span>
              <script id="card-body" type="text/x-handlebars-template">
                 {{#each cards}}
-                <div class="cardbody" {{#if
-                rarity}}style="border-color:{{border}};"{{/if}}>
-                    <h3>{{{title}}}</h3>
+                <div class="cardbody" {{#if type}}style="border-color:{{border}};"{{/if}}>
+                    <h3 {{#if rarity}}style="color:{{titleColor}};"{{/if}}>{{{title}}}</h3>
                     {{#if summon-cost}}
                     <div class="upper-right">
                     <img src="https://drive.google.com/thumbnail?id=1_KuTCrw-hCnvGc3jQmOckxPx4qKytLj5"/>
